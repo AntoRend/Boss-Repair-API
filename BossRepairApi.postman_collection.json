@@ -1,0 +1,904 @@
+{
+	"info": {
+		"_postman_id": "56fff9be-f713-4d89-8466-522ab872c7c0",
+		"name": "BossRepairApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Endpoints",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userFirstName\": \"User\",\n\t\"userLastName\": \"Prueba\",\n\t\"birthDate\": \"25/05/20\",\n\t\"email\": \"otroser@mail.com\",\n\t\"password\": \"password\",\n\t\"direction\": {\n\t\t\"streetAndNumber\": \"Calle 15\",\n\t\t\"municipality\": \"Delegacion\",\n\t\t\"city\": \"CDMX\",\n\t\t\"postalCode\": \"15000\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYyOTg3NX0.2-p2UXRe2XGxYkW9WFx7JG5Mm49yyDBKt1ENjjolOaM        ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "One User ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYyOTg3NX0.2-p2UXRe2XGxYkW9WFx7JG5Mm49yyDBKt1ENjjolOaM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users/5edda7f1c70b104386b6583a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"5edda7f1c70b104386b6583a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYyOTg3NX0.2-p2UXRe2XGxYkW9WFx7JG5Mm49yyDBKt1ENjjolOaM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"emailactualizado@mail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/5edda7f1c70b104386b6583a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"5edda7f1c70b104386b6583a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTQ2Nzc0OX0.YFH25nXeq9kxDg69iAhX_i6XCGRlZjLle2zhjlkUtKo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users/5ecee0f3ccf7a97130479c56",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"5ecee0f3ccf7a97130479c56"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All User Quotations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYyOTg3NX0.2-p2UXRe2XGxYkW9WFx7JG5Mm49yyDBKt1ENjjolOaM        ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users/quotations/5edc00a47f74db9b7cf59b42",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"quotations",
+								"5edc00a47f74db9b7cf59b42"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All User Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYyOTg3NX0.2-p2UXRe2XGxYkW9WFx7JG5Mm49yyDBKt1ENjjolOaM        "
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users/orders/5edda7f1c70b104386b6583a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"orders",
+								"5edda7f1c70b104386b6583a"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Repairman Endpoints",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"fullName\": \"Repair\",\n\t\"email\": \"repairil@mail.com\",\n\t\"password\": \"password\",\n\t\"workShopAddress\": {\n\t\t\"streetAddress\": \"street 15\",\n\t\t\"city\": \"Delegacion\",\n\t\t\"stateProvince\": \"CDMX\",\n\t\t\"zipCode\": \"14501\"\n\t},\n\t\"subscription\": {\n\t\t\"isActive\": false,\n\t\t\"type\": \"none\"\t\n\t},\n\t\"entityType\": \"Fisica\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/repairmen/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"repairmen",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Repairmen",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYyOTg3NX0.2-p2UXRe2XGxYkW9WFx7JG5Mm49yyDBKt1ENjjolOaM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/repairmen",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"repairmen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "One Repairman",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYyOTg3NX0.2-p2UXRe2XGxYkW9WFx7JG5Mm49yyDBKt1ENjjolOaM        ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/repairmen/5ede5e944038f229a4bd6734",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"repairmen",
+								"5ede5e944038f229a4bd6734"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Repairman",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYyOTg3NX0.2-p2UXRe2XGxYkW9WFx7JG5Mm49yyDBKt1ENjjolOaM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"validated\": \"true\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/repairmen/5ede5e944038f229a4bd6734",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"repairmen",
+								"5ede5e944038f229a4bd6734"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Repairman",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYyOTg3NX0.2-p2UXRe2XGxYkW9WFx7JG5Mm49yyDBKt1ENjjolOaM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/repairmen/5ede5e944038f229a4bd6734",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"repairmen",
+								"5ede5e944038f229a4bd6734"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Repairman Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYyOTg3NX0.2-p2UXRe2XGxYkW9WFx7JG5Mm49yyDBKt1ENjjolOaM"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/repairmen/orders/5edbf3b9f6667e96cc06988f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"repairmen",
+								"orders",
+								"5edbf3b9f6667e96cc06988f"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Admin Endpoints",
+			"item": [
+				{
+					"name": "Create Admin ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"adminFirstName\": \"prueba\",\n\t\"adminLastName\": \"prueb\",\n\t\"email\": \"l@gmail.com\",\n\t\"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/administrators/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"administrators",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Admins",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTQ2Nzc0OX0.YFH25nXeq9kxDg69iAhX_i6XCGRlZjLle2zhjlkUtKo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/administrators",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"administrators"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "One Admin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTQ2Nzc0OX0.YFH25nXeq9kxDg69iAhX_i6XCGRlZjLle2zhjlkUtKo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/administrators/5edbdd252e0d5792dc4c7dbe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"administrators",
+								"5edbdd252e0d5792dc4c7dbe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Admin",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTQ2Nzc0OX0.YFH25nXeq9kxDg69iAhX_i6XCGRlZjLle2zhjlkUtKo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"ltonnito@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/administrators/5edbdd252e0d5792dc4c7dbe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"administrators",
+								"5edbdd252e0d5792dc4c7dbe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Admin",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTQ2Nzc0OX0.YFH25nXeq9kxDg69iAhX_i6XCGRlZjLle2zhjlkUtKo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/administrators/5ede63e0c0968f2edf90ce88",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"administrators",
+								"5ede63e0c0968f2edf90ce88"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Quotation Endpoints",
+			"item": [
+				{
+					"name": "Create Quotation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idUserRequesting\": \"5ecee01d3b5049708267331a\",\n\t\"specialty\": \"Linea Blanca\",\n\t\"deviceType\": \"Refrigerador\",\n\t\"model\": \"LG Refi Chido\",\n\t\"problemDescription\": \"Aquí va a descripción del problema\",\n\t\"status\": \"Sin respuesta\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/quotations/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quotations",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All quotations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYzMzA2N30.YUBy4mwQvftut3mICRlXIP7pY_qCiydoBuK8vUYuRV8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/quotations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quotations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "One quote",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYzMzA2N30.YUBy4mwQvftut3mICRlXIP7pY_qCiydoBuK8vUYuRV8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/quotations/5edfa58287c3fe998396383e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quotations",
+								"5edfa58287c3fe998396383e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Quote",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYzMzA2N30.YUBy4mwQvftut3mICRlXIP7pY_qCiydoBuK8vUYuRV8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"answers\": [{\n\t\t\"idRepairman\": \"123456\",\n\t\t\"answer\": \"Este puede ser el problema\",\n\t\t\"cost\": \"500\"\n\t}],\n\t\"status\": \"Cotizaciones disponibles\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/quotations/5edc00a47f74db9b7cf59b42",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quotations",
+								"5edc00a47f74db9b7cf59b42"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update answer",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYzMzA2N30.YUBy4mwQvftut3mICRlXIP7pY_qCiydoBuK8vUYuRV8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idRepairman\": \"789456\",\n\t\"answer\": \"Yo digo que ya lo tire \",\n\t\"cost\": \"750\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/quotations/answers/5edfa58287c3fe998396383e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quotations",
+								"answers",
+								"5edfa58287c3fe998396383e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Quote",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYzMzA2N30.YUBy4mwQvftut3mICRlXIP7pY_qCiydoBuK8vUYuRV8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/quotations/5edf11721cf737099032b5df",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quotations",
+								"5edf11721cf737099032b5df"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Order Endpoints",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTQ2Nzc0OX0.YFH25nXeq9kxDg69iAhX_i6XCGRlZjLle2zhjlkUtKo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idUserRequesting\": \"5ecee01d3b5049708267331a\",\n\t\"idRepairmanResponse\": \"5edbf3b9f6667e96cc06988f\",\n\t\"quotationId\": \"5edbfe957f74db9b7cf59b41\",\n\t\"specialty\": \"Electronica\",\n    \"deviceType\": \"Xbox\",\n    \"model\": \"One\",\n    \"problemDescription\": \"Aquí va a descripción del problema\",\n    \"answer\": \"Este puede ser el problema\",\n    \"cost\": 500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYzMzA2N30.YUBy4mwQvftut3mICRlXIP7pY_qCiydoBuK8vUYuRV8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "One Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYzMzA2N30.YUBy4mwQvftut3mICRlXIP7pY_qCiydoBuK8vUYuRV8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/5edc075558ae01a1cad862b1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"5edc075558ae01a1cad862b1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYzMzA2N30.YUBy4mwQvftut3mICRlXIP7pY_qCiydoBuK8vUYuRV8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"status\": \"En proceso\",\n\t\"addFeatures\": [{\n\t\t\"newPieces\": \"cargador\",\n\t\t\"cost\": 200\n\t}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/5edc075558ae01a1cad862b1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"5edc075558ae01a1cad862b1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGJkZDI1MmUwZDU3OTJkYzRjN2RiZSIsImlhdCI6MTU5MTYzMzA2N30.YUBy4mwQvftut3mICRlXIP7pY_qCiydoBuK8vUYuRV8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/orders/5edc075558ae01a1cad862b1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"5edc075558ae01a1cad862b1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Login (all users)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"ltonnito@gmail.com\",\n\t\"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,32 @@
+{
+  "name": "bossrepairapi",
+  "version": "1.0.0",
+  "description": "backend file from bossrepair proyect",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IPS2792/ReparApp.git"
+  },
+  "author": "AntoRend",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IPS2792/ReparApp/issues"
+  },
+  "homepage": "https://github.com/IPS2792/ReparApp#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.14"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "standard": "^14.3.4"
+  }
+}

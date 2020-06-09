@@ -1,0 +1,4 @@
+applications:
+- name: boss-repair-api
+  random-route: false
+  memory: 128M
