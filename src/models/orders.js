@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
 
 const orderSchema = new mongoose.Schema({
-  idUserRequesting: {
-    type: String,
-    required: true
+  mailUserRequesting: {
+    type: String
   },
   idRepairmanResponse: {
     type: String,
@@ -32,6 +31,12 @@ const orderSchema = new mongoose.Schema({
   cost: {
     type: Number,
     required: true
+  },
+  status: {
+    type: String,
+    required: true,
+    default: 'Iniciada',
+    enum: ['Iniciada', 'Proceso activo', 'En disputa', 'Finalizada']
   },
   addFeatures: []
 })

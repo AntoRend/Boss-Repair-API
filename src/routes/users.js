@@ -43,7 +43,7 @@ router.get('/', adminAuth, async (req, res) => {
 })
 
 // get one user
-router.get('/:id', userAuth, async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params
     const user = await users.getUser(id)

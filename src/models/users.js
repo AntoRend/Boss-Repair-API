@@ -1,18 +1,18 @@
 const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
-  userFirstName: {
+  firstName: {
     type: String,
     minlength: 3,
     require: true,
-    trim: true,
-    lowercase: true
+    trim: true
+    // lowercase: true
   },
-  userLastName: {
+  lastName: {
     type: String,
     require: true,
-    trim: true,
-    lowercase: true
+    trim: true
+    // lowercase: true
   },
   birthDate: {
     type: String,
@@ -32,12 +32,16 @@ const userSchema = new mongoose.Schema({
     trim: true,
     select: false
   },
-  userAddress: {
-    streetAddress: { type: String, require: true },
-    city: { type: String, require: true },
-    stateProvince: { type: String, require: true },
-    zipCode: { type: String, require: true }
+  passwordConfirm: {
+    type: String,
+    require: true,
+    trim: true,
+    select: false
   },
+  streetAndNumber: { type: String, require: true },
+  municipality: { type: String, require: true },
+  city: { type: String, require: true },
+  zipCode: { type: String, require: true },
   role: {
     type: String,
     require: true,
@@ -45,4 +49,11 @@ const userSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('users', userSchema)
+// module.exports = mongoose.model('users', userSchema)
+
+const model = mongoose.model('users', userSchema)
+
+module.exports = {
+  model,
+  schema: userSchema
+}

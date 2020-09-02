@@ -24,7 +24,7 @@ router.post('/signup', async (req, res) => {
 })
 
 // get all Repairmen
-router.get('/', adminAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const allRepairmen = await Repairmen.getAll()
     res.json({
@@ -42,7 +42,7 @@ router.get('/', adminAuth, async (req, res) => {
 })
 
 // get one repairman
-router.get('/:id', userAuth, async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params
     const repairman = await Repairmen.getOne(id)
@@ -62,7 +62,7 @@ router.get('/:id', userAuth, async (req, res) => {
 })
 
 // update one repairman
-router.patch('/:id', userAuth, async (req, res) => {
+router.patch('/:id', async (req, res) => {
   try {
     const { id } = req.params
     const newData = req.body
@@ -84,7 +84,7 @@ router.patch('/:id', userAuth, async (req, res) => {
 })
 
 // delete one repairman
-router.delete('/:id', adminAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params
     const repairmanDeleted = await Repairmen.deleteOne(id)
@@ -104,7 +104,26 @@ router.delete('/:id', adminAuth, async (req, res) => {
   }
 })
 
-router.get('/orders/:id', userAuth, async (req, res) => {
+router.get('/repairs/:specialty', async (req, res) => {
+  try {
+    const { specialty } = req.params
+    const ordersData = await Repairmen.getOrderRepair(specialty)
+    res.json({
+      success: true,
+      data: {
+        ordersData: ordersData
+      }
+    })
+  } catch (error) {
+    res.status(400)
+    res.json({
+      success: false,
+      error: error.message
+    })
+  }
+})
+
+router.get('/orders/:id', async (req, res) => {
   try {
     const { id } = req.params
     const ordersData = await Repairmen.getOrders(id)
@@ -112,6 +131,25 @@ router.get('/orders/:id', userAuth, async (req, res) => {
       success: true,
       data: {
         ordersData: ordersData
+      }
+    })
+  } catch (error) {
+    res.status(400)
+    res.json({
+      success: false,
+      error: error.message
+    })
+  }
+})
+
+router.get('/repair-quotes/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const quotes = await Repairmen.getQuotes(id)
+    res.json({
+      success: true,
+      data: {
+        quotesData: quotes
       }
     })
   } catch (error) {

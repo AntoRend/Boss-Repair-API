@@ -7,9 +7,9 @@ const router = express.Router()
 
 router.post('/create', async (req, res) => {
   try {
-    const { idUserRequesting, idRepairmanResponse, quotationId, cost } = req.body
+    const { idRepairmanResponse, quotationId, cost } = req.body
     const newOrder = await orders.create(
-      idUserRequesting,
+      // idUserRequesting,
       idRepairmanResponse,
       quotationId,
       cost
@@ -72,6 +72,28 @@ router.patch('/:id', userAuth, async (req, res) => {
     const { id } = req.params
     const newData = req.body
     const orderUpdated = await orders.updateOne(id, newData)
+    res.json({
+      success: true,
+      message: 'The order is updated',
+      data: {
+        OrderUpdated: orderUpdated
+      }
+    })
+  } catch (error) {
+    res.status(400)
+    res.json({
+      success: false,
+      error: error.message
+    })
+  }
+})
+
+// quote anser update
+router.patch('/update-order/:id', userAuth, async (req, res) => {
+  try {
+    const { id } = req.params
+    const newData = req.body
+    const orderUpdated = await orders.updateFeatues(id, newData)
     res.json({
       success: true,
       message: 'The order is updated',

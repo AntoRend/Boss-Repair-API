@@ -29,6 +29,7 @@ function deleteOne (id) {
 }
 
 module.exports = {
+  create,
   getAll,
   getOne,
   updateOne,

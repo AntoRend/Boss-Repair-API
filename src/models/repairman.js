@@ -5,9 +5,20 @@ const repairmanSchema = new mongoose.Schema({
     type: String,
     minlength: 3,
     require: true,
+    trim: true
+    // lowercase: true
+  },
+  specialty: {
+    type: String,
+    require: true,
     trim: true,
     lowercase: true
   },
+  // entityType: {
+  //   type: String,
+  //   required: true,
+  //   enum: ['Fisica', 'Moral']
+  // },
   email: {
     type: String,
     index: true,
@@ -22,39 +33,29 @@ const repairmanSchema = new mongoose.Schema({
     trim: true,
     select: false
   },
-  workShopAddress: {
-    streetAddress: { type: String, require: true },
-    city: { type: String, require: true },
-    stateProvince: { type: String, require: true },
-    zipCode: { type: String, require: true }
+  passwordConfirm: {
+    type: String,
+    require: true,
+    trim: true,
+    select: false
+  },
+  streetAndNumber: { type: String, require: true },
+  municipality: { type: String, require: true },
+  city: { type: String, require: true },
+  zipCode: { type: String, require: true },
+  isActive: {
+    type: Boolean,
+    // require: true,
+    default: false
   },
   subscription: {
-    isActive: {
-      type: Boolean,
-      require: true,
-      default: false
-    },
-    type: {
-      type: String,
-      enum: {
-        values: ['none', 'forYear', 'byCommission'],
-        message: 'Ingresar "none", "forYear" o "byCommission"'
-      },
-      required: true,
-      default: 'none'
-    }
-  },
-  entityType: {
     type: String,
-    required: true,
-    enum: {
-      values: ['Fisica', 'Moral'],
-      message: 'Ingresar "Fisica" o "Moral"'
-    }
+    enum: ['none', 'Por año', 'Por comisión'],
+    default: 'none'
   },
   serviceRating: {
     type: Number,
-    required: false,
+    required: true,
     default: 0
   },
   validated: {
@@ -69,4 +70,9 @@ const repairmanSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('repairman', repairmanSchema)
+const model = mongoose.model('repairman', repairmanSchema)
+
+module.exports = {
+  model,
+  schema: repairmanSchema
+}
