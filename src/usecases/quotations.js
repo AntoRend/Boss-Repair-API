@@ -12,18 +12,21 @@ function create (quotationData) {
 // Get all quotations
 function getAll () {
   return Quotation.find()
-    .populate('repairman')
+    .populate('idRepairmanResponse')
+    .populate('idUser')
 }
 
 // Get One quotation
 function getOne (id) {
   return Quotation.findById(id)
-    .populate('repairman')
+    .populate('idRepairmanResponse')
+    .populate('idUser')
 }
 
 function getQuotesByEmail (email) {
   return Quotation.find({ userEmail: email })
-    .populate('repairman')
+    .populate('idRepairmanResponse')
+    .populate('idUser')
 }
 
 // Update one quotation
@@ -45,11 +48,6 @@ async function updateFeatures (id, newData) {
   const update = [...quote.updates, newData]
 
   return await quote.update({ updates: update })
-}
-
-async function quoteAnswered (id) {
-  const repairman = await Repairman.findById(id)
-  const order = await Quotation.find()
 }
 
 // Delete one quotation

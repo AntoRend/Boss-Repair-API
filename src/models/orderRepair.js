@@ -19,7 +19,8 @@ const quotationSchema = new Schema({
     required: true
   },
   file: {
-
+    type: String,
+    required: true
   },
   location: {
     type: String,

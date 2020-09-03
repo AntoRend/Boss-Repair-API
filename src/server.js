@@ -11,6 +11,12 @@ const orderRouter = require('./routes/orders')
 const complaintRouter = require('./routes/complaints')
 const authRouter = require('./routes/auth')
 
+// Stripe
+const payment = require('./routes/payment')
+
+// AWS bucket images
+const images = require('./routes/images')
+
 // Import CORS
 const cors = require('cors')
 
@@ -24,5 +30,8 @@ app.use('/repair-order', quotationRouter)
 app.use('/orders', orderRouter)
 app.use('/complaints', complaintRouter)
 app.use('/auth', authRouter)
+
+app.use('/pay', payment)
+app.use('/images', images)
 
 module.exports = app
