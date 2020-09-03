@@ -15,7 +15,7 @@ const router = express.Router()
  */
 const s3 = new aws.S3({
   accessKeyId: 'AKIA4G2K3GO7XSW62YLC',
-  secretAccessKey: '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',
+  secretAccessKey: '',
   Bucket: 'bossrepairimages'
 })
 
